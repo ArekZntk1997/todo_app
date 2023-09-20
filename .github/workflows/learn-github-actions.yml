@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: cd todo_app/src/webapp/api
+      - run: cd src/webapp/api
       - run: npm install
       - run: rpm run test
   Run-cypress-tests:
@@ -19,6 +19,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: cd todo_app/e2e/cypress
+      - run: cd e2e/cypress
       - run: npm install
       - run: rpm run test
