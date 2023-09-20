@@ -2,12 +2,23 @@ name: hello testBash
 run-name: hello testBash
 on: [push]
 jobs:
-  check-bats-version:
+  Run-unit-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: cd ~/Pipeline\ TestBash/todo_app/src/webapp/api
+      - run: npm install
+      - run: rpm run test
+  Run-cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: cd ~/Pipeline\ TestBash/todo_app/e2e/cypress
+      - run: npm install
+      - run: rpm run test
