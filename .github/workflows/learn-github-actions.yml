@@ -11,7 +11,7 @@ jobs:
           node-version: '14'
       - run: cd src/webapp/api
       - run: npm install
-      - run: rpm run test
+      - run: npm run test
   Run-cypress-tests:
     runs-on: ubuntu-latest
     steps:
@@ -21,4 +21,4 @@ jobs:
           node-version: '14'
       - run: cd e2e/cypress
       - run: npm install
-      - run: rpm run test
+      - run: npm run test
